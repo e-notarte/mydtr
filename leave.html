@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>mydtr | Leave Application</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:#F5F9F5;
+
+}
+
+.header{
+
+    background:white;
+
+    padding:18px 30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+}
+
+.logo{
+
+    width:170px;
+
+}
+
+.back-btn{
+
+    text-decoration:none;
+
+    background:#2E7D32;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+}
+
+.container{
+
+    max-width:1100px;
+
+    margin:30px auto;
+
+    display:grid;
+
+    grid-template-columns:300px 1fr;
+
+    gap:25px;
+
+    padding:20px;
+
+}
+
+.balance-card,
+.form-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.balance-card h2,
+.form-card h2{
+
+    color:#2E7D32;
+
+    margin-bottom:20px;
+
+}
+
+.balance{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #ECECEC;
+
+}
+
+.group{
+
+    margin-bottom:20px;
+
+}
+
+.group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.group input,
+.group select,
+.group textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #D9E5D9;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-family:Poppins;
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+.row{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+button{
+
+    flex:1;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.submit{
+
+    background:#2E7D32;
+
+    color:white;
+
+}
+
+.cancel{
+
+    background:#E74C3C;
+
+    color:white;
+
+}
+
+.submit:hover{
+
+    background:#1B5E20;
+
+}
+
+.cancel:hover{
+
+    background:#C0392B;
+
+}
+
+@media(max-width:768px){
+
+.container{
+
+    grid-template-columns:1fr;
+
+}
+
+.row{
+
+    grid-template-columns:1fr;
+
+}
+
+.buttons{
+
+    flex-direction:column;
+
+}
+
+.header{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<img
+class="logo"
+src="https://drive.google.com/thumbnail?id=1l-kSnqBxWZQ16gefjVPxXiZoS8rzzM91&sz=w1000">
+
+<a href="index.html" class="back-btn">
+    ← Back to Dashboard
+</a>
+
+</div>
+
+<div class="container">
+
+<div class="balance-card">
+
+<h2>Leave Balance</h2>
+
+<div class="balance">
+
+<span>Vacation Leave</span>
+
+<strong>10 Days</strong>
+
+</div>
+
+<div class="balance">
+
+<span>Sick Leave</span>
+
+<strong>8 Days</strong>
+
+</div>
+
+<div class="balance">
+
+<span>Emergency Leave</span>
+
+<strong>3 Days</strong>
+
+</div>
+
+<div class="balance">
+
+<span>Birthday Leave</span>
+
+<strong>1 Day</strong>
+
+</div>
+
+</div>
+
+<div class="form-card">
+
+<h2>Leave Application</h2>
+
+<div class="group">
+
+<label>Leave Type</label>
+
+<select id="leaveType">
+
+<option>Vacation Leave</option>
+
+<option>Sick Leave</option>
+
+<option>Emergency Leave</option>
+
+<option>Birthday Leave</option>
+
+<option>Bereavement Leave</option>
+
+<option>Leave Without Pay</option>
+
+</select>
+
+</div>
+
+<div class="row">
+
+<div class="group">
+
+<label>Date From</label>
+
+<input type="date" id="dateFrom">
+
+</div>
+
+<div class="group">
+
+<label>Date To</label>
+
+<input type="date" id="dateTo">
+
+</div>
+
+</div>
+
+<div class="group">
+
+<label>Total Days</label>
+
+<input
+type="text"
+id="totalDays"
+readonly>
+
+</div>
+
+<div class="group">
+
+<label>Reason</label>
+
+<textarea
+id="reason"
+rows="5"
+placeholder="Enter reason for leave..."></textarea>
+
+</div>
+
+<div class="row">
+
+<div class="group">
+
+<label>Emergency Contact</label>
+
+<input type="text">
+
+</div>
+
+<div class="group">
+
+<label>Contact Number</label>
+
+<input type="text">
+
+</div>
+
+</div>
+
+<div class="group">
+
+<label>Supporting Document (Optional)</label>
+
+<input type="file">
+
+</div>
+
+<div class="buttons">
+
+<button
+class="submit"
+onclick="submitLeave()">
+
+Submit Application
+
+</button>
+
+<button
+class="cancel"
+onclick="history.back()">
+
+Cancel
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const from=document.getElementById("dateFrom");
+const to=document.getElementById("dateTo");
+
+from.addEventListener("change",computeDays);
+to.addEventListener("change",computeDays);
+
+function computeDays(){
+
+    if(!from.value || !to.value) return;
+
+    const start=new Date(from.value);
+    const end=new Date(to.value);
+
+    const diff=end-start;
+
+    const days=Math.floor(diff/(1000*60*60*24))+1;
+
+    document.getElementById("totalDays").value=
+        days>0 ? days+" Day(s)" : "";
+
+}
+
+function submitLeave(){
+
+    const type=document.getElementById("leaveType").value;
+    const reason=document.getElementById("reason").value;
+
+    if(reason.trim()==""){
+
+        alert("Please enter the reason for your leave.");
+        return;
+
+    }
+
+    alert(type+" application submitted successfully!");
+
+}
+
+</script>
+
+</body>
+
+</html>
